@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "78f85ca6-07b8-4054-b200-f6a9e17f330f",
+		"name": "TestApi",
+		"description": "Una API simple para demostrar pruebas automatizadas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "46755745-78f85ca6-07b8-4054-b200-f6a9e17f330f"
+	},
+	"item": [
+		{
+			"name": "/",
+			"item": [
+				{
+					"name": "Read Root",
+					"id": "36deb1c5-a6a0-42b4-a8d5-8c1035901591",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						},
+						"description": "Devuelve un saludo de bienvenida."
+					},
+					"response": [
+						{
+							"id": "fc48a7f1-f706-4ec9-a72a-4e120a58e79b",
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "f5262fbb-c3ea-49f3-9e5c-9195d77a2daf"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				}
+			],
+			"id": "07c1f20c-96ee-46e8-8615-761473d122b9"
+		},
+		{
+			"name": "items",
+			"item": [
+				{
+					"name": "{item_id}",
+					"item": [
+						{
+							"name": "Read Item",
+							"id": "daaff467-2d3e-4894-8451-e06375b6f6d5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/items/:item_id?q=veniam eiusmod",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"items",
+										":item_id"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "veniam eiusmod"
+										}
+									],
+									"variable": [
+										{
+											"key": "item_id",
+											"value": "-11911390",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Devuelve un item específico, con una query opcional."
+							},
+							"response": [
+								{
+									"id": "96b20fec-b83a-4e79-8f3d-b07ecb03b912",
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/items/:item_id?q=veniam eiusmod",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"items",
+												":item_id"
+											],
+											"query": [
+												{
+													"key": "q",
+													"value": "veniam eiusmod"
+												}
+											],
+											"variable": [
+												{
+													"key": "item_id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "da9f396a-474c-4358-a425-331bc301d2ef"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"id": "1e1477f9-a818-4be2-ab7b-67850b0f807f",
+									"name": "Validation Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/items/:item_id?q=veniam eiusmod",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"items",
+												":item_id"
+											],
+											"query": [
+												{
+													"key": "q",
+													"value": "veniam eiusmod"
+												}
+											],
+											"variable": [
+												{
+													"key": "item_id"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "f15c3be4-3ea8-4922-bd35-8734e423932b"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"Duis fugiat\",\n        \"dolore anim nostrud laborum labore\"\n      ],\n      \"msg\": \"nostrud\",\n      \"type\": \"est ea nostrud\"\n    },\n    {\n      \"loc\": [\n        \"dolore\",\n        \"laboris sit anim reprehenderit\"\n      ],\n      \"msg\": \"Ut Excepteur non ullamco aliquip\",\n      \"type\": \"amet mollit exercitation in\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					],
+					"id": "875c1dd2-6121-4d32-89c4-4555a31b9482"
+				}
+			],
+			"id": "73e6e925-022e-4e5d-b050-7a8f6c82a505"
+		}
+	],
+	"variable": [
+		{
+			"id": "1c470eb9-abf6-4773-bc67-f6551c691c5a",
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
