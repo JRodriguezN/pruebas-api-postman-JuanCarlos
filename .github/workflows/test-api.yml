@@ -31,6 +31,6 @@ jobs:
         run: postman login --with-api-key ${{ secrets.POSTAMAN_API_KEY }}
       - name: Run API tests
         run: |
-          postman collection run "46755745-7f745f90-2596-4e4c-a10d-3c586bddbab5" --integration-id "183370-${{ github.run_id }}"
-          # Lint your API using Postman
-          postman api lint e8641c39-9787-499e-bf59-03cf92dc03cb --integration-id 183370
+          postman collection run "${{ github.workspace }}/postman/collections/TestApi.json"
+          # Lint your API using Postman CLI
+          postman api lint 43681ad6-bd79-45cd-b523-35b9117f5126
